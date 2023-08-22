@@ -20,6 +20,15 @@
         justify-content: space-between;
         width: 100%;
 
+        .leftItems {
+                display: flex;
+                height: 30px;
+        
+                .logo {
+                    margin-right: 10px;
+                }
+        
+            }
 
 
         .items {

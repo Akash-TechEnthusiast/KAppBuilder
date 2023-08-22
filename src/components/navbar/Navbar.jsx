@@ -11,14 +11,19 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LanIcon from "@mui/icons-material/Lan";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import logo from "../../images/logo.png";
 import "./navbar.scss";
 const Navbar = () => {
   return (
     <div className="navbar">
       <div className="wrapper">
-        <div className="search">
-          <input type="search" placeholder="search..."></input>
-          <SearchOutlinedIcon />
+        <div className="leftItems">
+        <img src={logo} alt="Logo" className="logo" />
+          <div className="search">
+            <input type="search" placeholder="search..."></input>
+            <SearchOutlinedIcon />
+        
+          </div>
         </div>
 
         <div className="items">
