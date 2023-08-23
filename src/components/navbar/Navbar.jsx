@@ -12,14 +12,48 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import LanIcon from "@mui/icons-material/Lan";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import logo from "../../images/logo.png";
+import newtemplate from "../../images/newtemplate.png";
+import oldtemplate from "../../images/oldtemplate.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import "./navbar.scss";
+import { Modal, ModalBody, ModalHeader, Row, Col } from "reactstrap";
+import React, { useState } from "react";
+
+import Widgets from "../../components/widgets/Widgets";
 
 const Navbar = () => {
-  const showAlert = () => {
-    window.alert("Button clicked!"); // Show the alert dialog
+  const selectTemplate = {
+    display: "flex",
+    marginTop: "-7px",
   };
-  
+
+  const modalview = {
+    position: "absolute",
+    top: "30%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+  };
+
+  const widgetview = {
+    width: "100px",
+    height: "100px",
+    marginRight: "10px", // Apply margin-right inline
+    flexDirection: "column",
+  };
+
+  const centeredimage = {
+    maxWidth: "100%",
+    maxHeight: "82%",
+  };
+
+  const textdisplay = {
+    display: "flex",
+    alignItems: "center", // Apply align-items inline
+    justifyContent: "center",
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -32,10 +66,77 @@ const Navbar = () => {
         </div>
 
         <div className="items">
-          <div className="item" onClick={showAlert}>
+          <div className="item" onClick={() => setIsModalOpen(true)}>
             <HouseIcon className="icon" />
             Home
           </div>
+
+          <Modal
+            style={modalview}
+            //size="sm"
+            isOpen={isModalOpen}
+            toggle={() => setIsModalOpen(!isModalOpen)}
+          >
+            <ModalHeader toggle={() => setIsModalOpen(!isModalOpen)}>
+              How would you like to create your new form?
+            </ModalHeader>
+            <ModalBody>
+              {/**   <form>
+                <Row>
+                  <Col lg={12}>
+                    <div>
+                      <lable htmlFor="name">Select Industry</lable>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter Industry"
+                      ></input>
+                    </div>
+                  </Col>
+                  <Col lg={12}>
+                    <div>
+                      <lable htmlFor="name">Select Scale</lable>
+                      <inp
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter scale"
+                      ></input>
+                    </div>
+                  </Col>
+                  <Col lg={12}>
+                    <div>
+                      <lable htmlFor="name">Select Module</lable>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Enter Module"
+                      ></input>
+                    </div>
+                  </Col>
+                </Row>
+              </form> */}
+              <div className="selectTemplate" style={selectTemplate}>
+                {/**  <Widgets /> */}
+
+                <div className="widget" style={widgetview}>
+                  <img
+                    style={centeredimage}
+                    src={newtemplate}
+                    alt="Image with Box Shadow"
+                  />
+                  <p style={textdisplay}>create from scratch</p>
+                </div>
+                <div className="widget" style={widgetview}>
+                  <img
+                    style={centeredimage}
+                    src={oldtemplate}
+                    alt="Image with Box Shadow"
+                  />
+                  <p style={textdisplay}>choose template</p>
+                </div>
+              </div>
+            </ModalBody>
+          </Modal>
 
           <div className="item">
             <DescriptionIcon className="icon" />
