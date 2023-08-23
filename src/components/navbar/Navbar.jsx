@@ -12,22 +12,27 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import LanIcon from "@mui/icons-material/Lan";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import logo from "../../images/logo.png";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import "./navbar.scss";
+
 const Navbar = () => {
+  const showAlert = () => {
+    window.alert("Button clicked!"); // Show the alert dialog
+  };
+  
   return (
     <div className="navbar">
       <div className="wrapper">
         <div className="leftItems">
-        <img src={logo} alt="Logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo" />
           <div className="search">
             <input type="search" placeholder="search..."></input>
             <SearchOutlinedIcon />
-        
           </div>
         </div>
 
         <div className="items">
-          <div className="item">
+          <div className="item" onClick={showAlert}>
             <HouseIcon className="icon" />
             Home
           </div>
@@ -64,16 +69,24 @@ const Navbar = () => {
           </div>
 
           <div className="item">
-            <LogoutIcon className="icon" />
+            <AccountCircleIcon className="icon" />
           </div>
 
           <div className="item">
+            <LogoutIcon className="icon" />
+          </div>
+
+          {/** 
+
+         <div className="item">
             <img
               src="https://media.geeksforgeeks.org/wp-content/uploads/20190506164011/logo3.png"
               alt="GeeksforGeeks logo"
               className="avatar"
             ></img>
-          </div>
+          </div> 
+
+          */}
         </div>
       </div>
     </div>
