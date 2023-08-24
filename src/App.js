@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 // import React, { Component }  from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
+import WelcomePage from "./pages/welcomepage/Welcomepage";
+
+
 
 function App() {
   return (
@@ -13,7 +16,7 @@ function App() {
         <Routes>
 
           <Route path="/">
-            <Route index element={<Home/>} />
+            <Route index element={<WelcomePage/>} />
            
 
 
