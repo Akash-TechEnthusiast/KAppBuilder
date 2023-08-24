@@ -66,7 +66,7 @@ const Navbar = () => {
         </div>
 
         <div className="items">
-          <div className="item" onClick={() => setIsModalOpen(true)}>
+          <div className="item">
             <HouseIcon className="icon" />
             Home
           </div>
@@ -148,7 +148,7 @@ const Navbar = () => {
             Role
           </div>
 
-          <div className="item">
+          <div className="item" onClick={() => setIsModalOpen(true)}>
             <AddCircleIcon className="icon" />
             Template Builder
           </div>
