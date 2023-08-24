@@ -1,0 +1,19 @@
+.template {
+
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 30px;
+    display: flex;
+    flex: 1;
+    height: 90vh;
+    justify-content: space-between;
+    background-color: #abf7ff52;
+    border-radius: 10px;
+    // height: 100px;
+    transition: background-color 0.3s ease-in-out;
+
+    box-shadow: 0px 2px 10px -4px rgb(63, 60, 60);
+
+
+}

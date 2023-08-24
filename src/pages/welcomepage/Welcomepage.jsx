@@ -11,9 +11,14 @@ const WelcomePage = () => {
     <div className="image-container">
       <div className="image-wrapper">
         <img src={welcomepage} alt="Image" />
-        <IconButton className="icon-button">
+        {/**  <IconButton className="icon-button">
           <ArrowForwardIosIcon />
-        </IconButton>
+        </IconButton>  */}
+        <div class="arrow">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   );

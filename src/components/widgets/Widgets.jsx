@@ -6,7 +6,6 @@ const Widgets = () => {
   return (
     <div className="widget">
       <div className="left"></div>
-
       <div className="right"></div>
     </div>
   );

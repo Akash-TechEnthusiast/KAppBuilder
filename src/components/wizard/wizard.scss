@@ -1,0 +1,42 @@
+.wizard {
+
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    background-color: #e6ffff;
+    border-radius: 10px;
+    height: 145px;
+    width: 300px;
+    transition: background-color 0.3s ease-in-out;
+
+    box-shadow: 0px 2px 10px -4px rgb(63, 60, 60);
+    margin-right: 10px;
+
+
+
+    .left,
+    .right {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+
+    }
+}
+
+.wizard:hover {
+
+
+    box-shadow: 0px 2px 10px -4px rgba(255, 255, 255, 0.036);
+}
+
+.wizard h3 {
+    margin: 0;
+}
+
+.wizard p {
+    margin: 0;
+}
