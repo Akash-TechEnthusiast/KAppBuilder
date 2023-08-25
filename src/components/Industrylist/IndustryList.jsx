@@ -2,9 +2,9 @@ import React from "react";
 // Import your Widget component
 import Wizard from "../../components/wizard/Wizard";
 import "./industrylist.scss";
+import { Link } from "react-router-dom";
 
 const IndustryList = () => {
-
   const handleClick = () => {
     window.alert(`You clicked on Widget`);
     //onClick(); // Call the parent's onClick handler if needed
@@ -38,10 +38,13 @@ const IndustryList = () => {
       {widgets.map((widget, index) => (
         <Wizard key={index} title={widget.title} content={widget.content} />
       ))}
-      <div class="arrow" onClick={handleClick}>
-        <span></span>
-        <span></span>
-      </div>
+
+      <Link to="/vertical" style={{ textDecoration: "none" }}>
+        <div class="arrow">
+          <span></span>
+          <span></span>
+        </div>
+      </Link>
     </div>
   );
 };
