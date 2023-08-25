@@ -4,16 +4,33 @@ import Wizard from "../../components/wizard/Wizard";
 import "./industrylist.scss";
 
 const IndustryList = () => {
+
+  const handleClick = () => {
+    window.alert(`You clicked on Widget`);
+    //onClick(); // Call the parent's onClick handler if needed
+  };
+
   const widgets = [
-    { title: "Widget 1", content: "Content of widget 1" },
-    { title: "Widget 2", content: "Content of widget 2" },
-    { title: "Widget 3", content: "Content of widget 4" },
-    { title: "Widget 4", content: "Content of widget 5" },
-    { title: "Widget 5", content: "Content of widget 6" },
-    { title: "Widget 6", content: "Content of widget 7" },
-    { title: "Widget 7", content: "Content of widget 8" },
-    { title: "Widget 8", content: "Content of widget 9" },
-    { title: "Widget 9", content: "Content of widget 10" },
+    { title: "Manufacture" },
+    { title: "Auto Mobile" },
+    { title: "Banks" },
+    { title: "Pharma Industry" },
+    { title: "IT" },
+    { title: "School Management" },
+    { title: "Hospital" },
+    { title: "Grocery Shop " },
+    { title: "Steel" },
+    { title: "Dams" },
+    { title: "Real Estate" },
+    { title: "Widget 3" },
+    { title: "Widget 4" },
+    { title: "Widget 5" },
+    { title: "Widget 6" },
+    { title: "Widget 7" },
+    { title: "Widget 8" },
+    { title: "Widget 9" },
+    { title: "Widget 1" },
+    { title: "+" },
   ];
 
   return (
@@ -21,6 +38,10 @@ const IndustryList = () => {
       {widgets.map((widget, index) => (
         <Wizard key={index} title={widget.title} content={widget.content} />
       ))}
+      <div class="arrow" onClick={handleClick}>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 };
