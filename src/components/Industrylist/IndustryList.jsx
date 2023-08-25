@@ -3,6 +3,7 @@ import React from "react";
 import Wizard from "../../components/wizard/Wizard";
 import "./industrylist.scss";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const IndustryList = () => {
   const handleClick = () => {
@@ -11,32 +12,45 @@ const IndustryList = () => {
   };
 
   const widgets = [
-    { title: "Manufacture" },
-    { title: "Auto Mobile" },
-    { title: "Banks" },
-    { title: "Pharma Industry" },
-    { title: "IT" },
-    { title: "School Management" },
-    { title: "Hospital" },
-    { title: "Grocery Shop " },
-    { title: "Steel" },
-    { title: "Dams" },
-    { title: "Real Estate" },
-    { title: "Widget 3" },
-    { title: "Widget 4" },
-    { title: "Widget 5" },
-    { title: "Widget 6" },
-    { title: "Widget 7" },
-    { title: "Widget 8" },
-    { title: "Widget 9" },
-    { title: "Widget 1" },
-    { title: "+" },
+    { id: 1, title: "Manufacture" },
+    { id: 2, title: "Auto Mobile" },
+    { id: 3, title: "Banks" },
+    { id: 4, title: "Pharma Industry" },
+    { id: 5, title: "IT" },
+    { id: 6, title: "School Management" },
+    { id: 7, title: "Hospital" },
+    { id: 8, title: "Grocery Shop " },
+    { id: 9, title: "Steel" },
+    { id: 10, title: "Dams" },
+    { id: 11, title: "Real Estate" },
+    { id: 12, title: "Widget 3" },
+    { id: 13, title: "Widget 4" },
+    { id: 14, title: "Widget 5" },
+    { id: 15, title: "Widget 6" },
+    { id: 16, title: "Widget 7" },
+    { id: 17, title: "Widget 8" },
+    { id: 18, title: "Widget 9" },
+    { id: 19, title: "Widget 1" },
+    { id: 20, title: "+" },
   ];
+
+  const [selectedWidgetId, setSelectedWidgetId] = useState(null);
+
+  const handleWidgetClick = (widgetId) => {
+    setSelectedWidgetId(widgetId);
+  };
 
   return (
     <div className="widget-list">
       {widgets.map((widget, index) => (
-        <Wizard key={index} title={widget.title} content={widget.content} />
+        <Wizard
+          key={widget.id}
+          title={widget.title}
+          content={widget.content}
+          data={widget}
+          isSelected={widget.id === selectedWidgetId}
+          onClick={() => handleWidgetClick(widget.id)}
+        />
       ))}
 
       <Link to="/vertical" style={{ textDecoration: "none" }}>

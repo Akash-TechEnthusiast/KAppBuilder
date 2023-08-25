@@ -1,0 +1,35 @@
+.image-gallery {
+    position: relative;
+    text-align: center;
+}
+
+.image-gallery img {
+    max-width: 100%;
+    max-height: 400px;
+    margin: 0 auto;
+}
+
+.arrow-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.arrow-icon:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

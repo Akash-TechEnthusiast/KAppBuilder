@@ -14,11 +14,6 @@ const WelcomePage = () => {
         {/**  <IconButton className="icon-button">
           <ArrowForwardIosIcon />
         </IconButton>  */}
-        <div class="arrow">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       </div>
     </div>
   );
