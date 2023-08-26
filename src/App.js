@@ -9,6 +9,7 @@ import VerticalList from "./components/verticallist/VerticalList";
 import ImageGallery from "./components/General/ImageGallery";
 import Breadcrumbs from "./components/General/Breadcrumbs";
 import BreadcrumbsComponent from "./components/General/BreadcrumbsComponent";
+import Login from "./pages/login/Login";
 
 
 const images = [
@@ -25,7 +26,6 @@ const breadcrumbItems = ['Home', 'Category', 'Subcategory', 'Product'];
 function App() {
   return (
     <div>
-  <h1>Page Navigation with Breadcrumbs</h1>
 
      
         <BrowserRouter>
@@ -33,10 +33,11 @@ function App() {
         <Routes>
   
           <Route path="/">
-            <Route index element={<WelcomePage/>} />
+            <Route index element={<Login/>} />
+            <Route path="/industry" element={<Template/>} />
             <Route path="/image" element={<ImageGallery images={images}/>} />
             <Route path="/image/bread" element= {<Breadcrumbs items={breadcrumbItems} />} />
-            <Route path="/image/bread/vertical" element={<VerticalList />} />
+            <Route path="/industry/vertical" element={<VerticalList />} />
            
           </Route>
 

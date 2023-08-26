@@ -53,7 +53,7 @@ const IndustryList = () => {
         />
       ))}
 
-      <Link to="/vertical" style={{ textDecoration: "none" }}>
+      <Link to="/industry/vertical" style={{ textDecoration: "none" }}>
         <div class="arrow">
           <span></span>
           <span></span>

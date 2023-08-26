@@ -54,7 +54,7 @@ const VerticalList = () => {
                   <span></span>
                 </div>
               </Link>
-              <Link to="/" style={{ textDecoration: "none" }}>
+              <Link to="/industry" style={{ textDecoration: "none" }}>
                 <div class="arrowleft">
                   <span></span>
                   <span></span>

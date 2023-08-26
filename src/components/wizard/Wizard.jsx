@@ -6,7 +6,7 @@ import React from "react";
 
 const Wizard = ({ title, content, data, isSelected, onClick }) => {
   const widgetStyle = {
-    backgroundColor: isSelected ? "blue" : "lightgray",
+    backgroundColor: isSelected ? "blue" : "white",
     // Add other styles as needed
   };
 
