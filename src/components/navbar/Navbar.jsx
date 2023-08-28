@@ -143,14 +143,9 @@ const Navbar = () => {
             Form
           </div>
 
-          <div className="item">
+          <div className="item" onClick={() => setIsModalOpen(true)}>
             <LanIcon className="icon" />
             Role
-          </div>
-
-          <div className="item" onClick={() => setIsModalOpen(true)}>
-            <AddCircleIcon className="icon" />
-            Template Builder
           </div>
 
           <div className="item">

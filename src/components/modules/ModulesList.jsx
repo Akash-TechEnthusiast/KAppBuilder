@@ -1,22 +1,22 @@
 import React from "react";
 // Import your Widget component
-import Wizard from "../../components/wizard/Wizard";
-import "./verticalist.scss";
+import Wizard from "../wizard/Wizard";
+import "./modules.scss";
 import { Link } from "react-router-dom";
 
-const VerticalList = () => {
+const ModulesList = () => {
   const handleClick = () => {
     window.alert(`You clicked on Widget`);
     //onClick(); // Call the parent's onClick handler if needed
   };
 
   const widgets = [
-    { id: 1, title: "XX" },
-    { id: 2, title: "YY" },
-    { id: 3, title: "ZZ" },
-    { id: 4, title: "AA" },
-    { id: 5, title: "BB" },
-    { id: 6, title: "CC" },
+    { id: 1, title: "HRMS" },
+    { id: 2, title: "INVENTORY" },
+    { id: 3, title: "PROCUREMENT" },
+    { id: 4, title: "FINANCE" },
+    { id: 5, title: "SALES" },
+    { id: 6, title: "PAYROLL" },
     { id: 7, title: "DD" },
     { id: 8, title: "EE" },
     { id: 9, title: "FF" },
@@ -49,7 +49,7 @@ const VerticalList = () => {
               ))}
 
               <Link
-                to="/industry/vertical/modules"
+                to="/industry/vertical/modules/process"
                 style={{ textDecoration: "none" }}
               >
                 <div class="arrow">
@@ -57,7 +57,7 @@ const VerticalList = () => {
                   <span></span>
                 </div>
               </Link>
-              <Link to="/industry" style={{ textDecoration: "none" }}>
+              <Link to="/industry/vertical" style={{ textDecoration: "none" }}>
                 <div class="arrowleft">
                   <span></span>
                   <span></span>
@@ -73,4 +73,4 @@ const VerticalList = () => {
   );
 };
 
-export default VerticalList;
+export default ModulesList;

@@ -10,6 +10,8 @@ import ImageGallery from "./components/General/ImageGallery";
 import Breadcrumbs from "./components/General/Breadcrumbs";
 import BreadcrumbsComponent from "./components/General/BreadcrumbsComponent";
 import Login from "./pages/login/Login";
+import ModulesList from "./components/modules/ModulesList";
+
 
 
 const images = [
@@ -38,6 +40,11 @@ function App() {
             <Route path="/image" element={<ImageGallery images={images}/>} />
             <Route path="/image/bread" element= {<Breadcrumbs items={breadcrumbItems} />} />
             <Route path="/industry/vertical" element={<VerticalList />} />
+            <Route path="/industry/vertical/modules" element={<ModulesList />} />
+            <Route path="/industry/vertical/modules/process" element={<Home />} />
+
+
+            
            
           </Route>
 
