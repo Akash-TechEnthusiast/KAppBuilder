@@ -42,6 +42,11 @@ const Sidebar = () => {
           </li>
 
           <li>
+            <GroupIcon className="icon" />
+            <span>PROCURMENT </span>
+          </li>
+
+          <li>
             <ProductionQuantityLimitsIcon className="icon" />
             <span>INVENTORY</span>
           </li>

@@ -18,6 +18,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import "./navbar.scss";
 import { Modal, ModalBody, ModalHeader, Row, Col } from "reactstrap";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Widgets from "../../components/widgets/Widgets";
 
@@ -168,9 +169,11 @@ const Navbar = () => {
             <AccountCircleIcon className="icon" />
           </div>
 
-          <div className="item">
-            <LogoutIcon className="icon" />
-          </div>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <div className="item">
+              <LogoutIcon className="icon" />
+            </div>
+          </Link>
 
           {/** 
 

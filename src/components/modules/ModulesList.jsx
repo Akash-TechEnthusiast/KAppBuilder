@@ -3,11 +3,18 @@ import React from "react";
 import Wizard from "../wizard/Wizard";
 import "./modules.scss";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ModulesList = () => {
   const handleClick = () => {
     window.alert(`You clicked on Widget`);
     //onClick(); // Call the parent's onClick handler if needed
+  };
+  const [selectedWidgetId, setSelectedWidgetId] = useState(null);
+
+  const handleWidgetClick = (widgetId) => {
+    console.log(widgetId);
+    setSelectedWidgetId(widgetId);
   };
 
   const widgets = [
@@ -42,9 +49,12 @@ const ModulesList = () => {
             <div className="widget-list">
               {widgets.map((widget, index) => (
                 <Wizard
-                  key={index}
+                  key={widget.id}
                   title={widget.title}
                   content={widget.content}
+                  data={widget}
+                  isSelected={widget.id === selectedWidgetId}
+                  onClick={() => handleWidgetClick(widget.id)}
                 />
               ))}
 

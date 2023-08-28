@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const IndustryList = () => {
-  const handleClick = () => {
+  const handleClick = (widgetId) => {
     window.alert(`You clicked on Widget`);
     //onClick(); // Call the parent's onClick handler if needed
   };
@@ -37,6 +37,7 @@ const IndustryList = () => {
   const [selectedWidgetId, setSelectedWidgetId] = useState(null);
 
   const handleWidgetClick = (widgetId) => {
+    console.log(widgetId);
     setSelectedWidgetId(widgetId);
   };
 
