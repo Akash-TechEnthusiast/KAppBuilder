@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./login.scss";
+import loginbackgroud from "../../images/loginbackgroud.png";
 const Login = () => {
   return (
     <div class="main">
