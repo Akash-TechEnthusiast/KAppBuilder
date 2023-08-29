@@ -4,8 +4,7 @@ import "./wizard.scss";
 
 import React from "react";
 
-const Wizard = ({ title, content, data, isSelected, onClick }) => {
-
+const Wizard = ({ id, title, content, data, isSelected, onClick }) => {
   console.log("Hllo wizard " + isSelected);
   const widgetStyle = {
     backgroundColor: isSelected ? "blue" : "white",
@@ -13,7 +12,7 @@ const Wizard = ({ title, content, data, isSelected, onClick }) => {
   };
 
   return (
-    <div className="wizard" style={widgetStyle} onClick={onClick}>
+    <div className="wizard" style={widgetStyle} onClick={() => onClick(id)}>
       <h3>{title}</h3>
       <p>{content}</p>
     </div>

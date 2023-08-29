@@ -12,9 +12,20 @@ const ModulesList = () => {
   };
   const [selectedWidgetId, setSelectedWidgetId] = useState(null);
 
-  const handleWidgetClick = (widgetId) => {
-    console.log(widgetId);
-    setSelectedWidgetId(widgetId);
+  //const handleWidgetClick = (widgetId) => {
+  //console.log(widgetId);
+  //setSelectedWidgetId(widgetId);
+  //};
+
+  const [selectedShadows, setSelectedShadows] = useState([]);
+
+  const handleWidgetClick = (id) => {
+    console.log("selected widget", selectedShadows);
+    if (selectedShadows.includes(id)) {
+      setSelectedShadows(selectedShadows.filter((shadowId) => shadowId !== id));
+    } else {
+      setSelectedShadows([...selectedShadows, id]);
+    }
   };
 
   const widgets = [
@@ -50,10 +61,11 @@ const ModulesList = () => {
               {widgets.map((widget, index) => (
                 <Wizard
                   key={widget.id}
+                  id={widget.id}
                   title={widget.title}
                   content={widget.content}
                   data={widget}
-                  isSelected={widget.id === selectedWidgetId}
+                  isSelected={selectedShadows.includes(widget.id)}
                   onClick={() => handleWidgetClick(widget.id)}
                 />
               ))}

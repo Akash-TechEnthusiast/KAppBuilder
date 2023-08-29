@@ -11,6 +11,10 @@ import Breadcrumbs from "./components/General/Breadcrumbs";
 import BreadcrumbsComponent from "./components/General/BreadcrumbsComponent";
 import Login from "./pages/login/Login";
 import ModulesList from "./components/modules/ModulesList";
+import Moduletreeview from "./components/moduletreeview/Moduletreeview";
+import FormBuilder from "./components/dragAnddrop/FormBuilder";
+
+
 
 
 
@@ -35,7 +39,7 @@ function App() {
         <Routes>
   
           <Route path="/">
-            <Route index element={<Login/>} />
+            <Route index element={<Moduletreeview/>} />
             <Route path="/industry" element={<Template/>} />
             <Route path="/image" element={<ImageGallery images={images}/>} />
             <Route path="/image/bread" element= {<Breadcrumbs items={breadcrumbItems} />} />
