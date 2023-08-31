@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./imagegallery.scss"; // Import your CSS for styling
 
+
 import welcomepage from "../../images/new13.jpg";
 
 const ImageGallery = ({ images }) => {
