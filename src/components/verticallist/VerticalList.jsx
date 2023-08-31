@@ -4,6 +4,8 @@ import Wizard from "../../components/wizard/Wizard";
 import "./verticalist.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Modal, ModalBody, ModalHeader, Row, Col } from "reactstrap";
+import Moduletreeview from "../../components/moduletreeview/Moduletreeview";
 
 const VerticalList = () => {
   const handleClick = () => {
@@ -13,9 +15,26 @@ const VerticalList = () => {
 
   const [selectedWidgetId, setSelectedWidgetId] = useState(null);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleWidgetClick = (widgetId) => {
     console.log(widgetId);
     setSelectedWidgetId(widgetId);
+    setIsModalOpen(true);
+  };
+
+  const modalview = {
+    position: "absolute",
+    top: "35%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+  };
+
+  const scrollablemodalbody = {
+    maxHeight: "500px", // Set your desired max height here
+    overflowY: "auto", // Enable vertical scrollbar if content overflows
+    padding: "20px", // Add any other styling properties as needed
+    backgroundColor: "#f0f0f0",
   };
 
   const widgets = [
@@ -58,6 +77,22 @@ const VerticalList = () => {
                   onClick={() => handleWidgetClick(widget.id)}
                 />
               ))}
+
+              <Modal
+                style={modalview}
+                //size="sm"
+                isOpen={isModalOpen}
+                toggle={() => setIsModalOpen(!isModalOpen)}
+              >
+                <ModalHeader toggle={() => setIsModalOpen(!isModalOpen)}>
+                  Pls select submodules and processes
+                </ModalHeader>
+                <ModalBody style={scrollablemodalbody}>
+                  <div className="selectTemplate">
+                    <Moduletreeview />
+                  </div>
+                </ModalBody>
+              </Modal>
 
               <Link
                 to="/industry/vertical/modules"
