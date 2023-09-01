@@ -18,6 +18,7 @@ import Home from "../../pages/home/Home";
 
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
+
 const VerticalList = () => {
   const handleClick = () => {
     window.alert(`You clicked on Widget`);
@@ -48,6 +49,7 @@ const VerticalList = () => {
   };
 
   const [showChild, setShowChild] = useState(true);
+  const [childData, setChildData] = useState("");
 
   const scrollablemodalbody = {
     maxHeight: "500px", // Set your desired max height here
@@ -89,6 +91,8 @@ const VerticalList = () => {
     setShowChild(!showChild);
   };
 
+  const dataFromParent = "test";
+
   return (
     <div>
       {showChild ? (
@@ -119,7 +123,7 @@ const VerticalList = () => {
                     </ModalHeader>
                     <ModalBody style={scrollablemodalbody}>
                       <div className="selectTemplate">
-                        <Moduletreeview />
+                        <Moduletreeview onData={(data) => setChildData(data)} />
                       </div>
                     </ModalBody>
                     <ModalFooter>
@@ -155,7 +159,7 @@ const VerticalList = () => {
           </div>
         </div>
       ) : null}
-      {showNewComponent && <Home />}
+      {showNewComponent && <Home data={childData} />}
     </div>
   );
 };
