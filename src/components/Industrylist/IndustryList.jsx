@@ -4,6 +4,7 @@ import Wizard from "../../components/wizard/Wizard";
 import "./industrylist.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import VerticalList from "../../components/verticallist/VerticalList";
 
 const IndustryList = () => {
   const handleClick = (widgetId) => {
@@ -36,30 +37,39 @@ const IndustryList = () => {
 
   const [selectedWidgetId, setSelectedWidgetId] = useState(null);
 
-  const handleWidgetClick = (widgetId) => {
+  const [showChild1, setShowChild1] = useState(true);
+
+  const handleWidgetClick1 = (widgetId) => {
     console.log(widgetId);
     setSelectedWidgetId(widgetId);
+    setShowChild1(!showChild1);
   };
 
   return (
-    <div className="widget-list">
-      {widgets.map((widget, index) => (
-        <Wizard
-          key={widget.id}
-          title={widget.title}
-          content={widget.content}
-          data={widget}
-          isSelected={widget.id === selectedWidgetId}
-          onClick={() => handleWidgetClick(widget.id)}
-        />
-      ))}
+    <div>
+      {showChild1 ? (
+        <div className="widget-list">
+          {widgets.map((widget, index) => (
+            <Wizard
+              key={widget.id}
+              title={widget.title}
+              content={widget.content}
+              data={widget}
+              isSelected={widget.id === selectedWidgetId}
+              onClick={() => handleWidgetClick1(widget.id)}
+            />
+          ))}
 
-      <Link to="/industry/vertical" style={{ textDecoration: "none" }}>
-        <div class="arrow">
-          <span></span>
-          <span></span>
+          <Link to="/industry/vertical" style={{ textDecoration: "none" }}>
+            <div class="arrow">
+              <span></span>
+              <span></span>
+            </div>
+          </Link>
         </div>
-      </Link>
+      ) : (
+        <VerticalList />
+      )}
     </div>
   );
 };

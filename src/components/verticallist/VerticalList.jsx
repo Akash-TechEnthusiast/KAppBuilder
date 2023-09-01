@@ -48,7 +48,7 @@ const VerticalList = () => {
     transform: "translate(-50%, -50%)",
   };
 
-  const [showChild, setShowChild] = useState(true);
+  const [showChild2, setShowChild2] = useState(true);
   const [childData, setChildData] = useState("");
 
   const scrollablemodalbody = {
@@ -88,78 +88,77 @@ const VerticalList = () => {
     console.log("Form submitted");
     toggleModal(); // Close the modal after submission
     setShowNewComponent(true);
-    setShowChild(!showChild);
+    setShowChild2(!showChild2);
   };
 
   const dataFromParent = "test";
 
   return (
     <div>
-      {showChild ? (
+      {showChild2 ? (
         <div className="template-container">
           <div className="template-wrapper">
-            <div className="template">
-              <div className="left">
-                <div className="widget-list">
-                  {widgets.map((widget, index) => (
-                    <Wizard
-                      key={widget.id}
-                      title={widget.title}
-                      content={widget.content}
-                      data={widget}
-                      isSelected={widget.id === selectedWidgetId}
-                      onClick={() => handleWidgetClick(widget.id)}
-                    />
-                  ))}
+            <div className="left">
+              <div className="widget-list1">
+                {widgets.map((widget, index) => (
+                  <Wizard
+                    key={widget.id}
+                    title={widget.title}
+                    content={widget.content}
+                    data={widget}
+                    isSelected={widget.id === selectedWidgetId}
+                    onClick={() => handleWidgetClick(widget.id)}
+                  />
+                ))}
 
-                  <Modal
-                    style={modalview}
-                    //size="sm"
-                    isOpen={isModalOpen}
-                    toggle={() => setIsModalOpen(!isModalOpen)}
-                  >
-                    <ModalHeader toggle={() => setIsModalOpen(!isModalOpen)}>
-                      Pls select submodules and processes
-                    </ModalHeader>
-                    <ModalBody style={scrollablemodalbody}>
-                      <div className="selectTemplate">
-                        <Moduletreeview onData={(data) => setChildData(data)} />
-                      </div>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button color="secondary" onClick={toggleModal}>
-                        Cancel
-                      </Button>
-                      <Button color="primary" onClick={handleSubmit}>
-                        Submit
-                      </Button>
-                    </ModalFooter>
-                  </Modal>
+                <Modal
+                  style={modalview}
+                  //size="sm"
+                  isOpen={isModalOpen}
+                  toggle={() => setIsModalOpen(!isModalOpen)}
+                >
+                  <ModalHeader toggle={() => setIsModalOpen(!isModalOpen)}>
+                    Pls select submodules and processes
+                  </ModalHeader>
+                  <ModalBody style={scrollablemodalbody}>
+                    <div className="selectTemplate">
+                      <Moduletreeview onData={(data) => setChildData(data)} />
+                    </div>
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button color="secondary" onClick={toggleModal}>
+                      Cancel
+                    </Button>
+                    <Button color="primary" onClick={handleSubmit}>
+                      Submit
+                    </Button>
+                  </ModalFooter>
+                </Modal>
 
-                  <Link
-                    to="/industry/vertical/modules"
-                    style={{ textDecoration: "none" }}
-                  >
-                    <div class="arrow">
-                      <span></span>
-                      <span></span>
-                    </div>
-                  </Link>
-                  <Link to="/industry" style={{ textDecoration: "none" }}>
-                    <div class="arrowleft">
-                      <span></span>
-                      <span></span>
-                    </div>
-                  </Link>
-                </div>
+                <Link
+                  to="/industry/vertical/modules"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div class="arrow">
+                    <span></span>
+                    <span></span>
+                  </div>
+                </Link>
+                <Link to="/industry" style={{ textDecoration: "none" }}>
+                  <div class="arrowleft">
+                    <span></span>
+                    <span></span>
+                  </div>
+                </Link>
               </div>
-
-              <div className="right"></div>
             </div>
+
+            <div className="right"></div>
           </div>
         </div>
-      ) : null}
-      {showNewComponent && <Home data={childData} />}
+      ) : (
+        <Home data={childData} />
+      )}
     </div>
   );
 };
