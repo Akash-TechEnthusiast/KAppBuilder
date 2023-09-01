@@ -53,45 +53,50 @@ const ModulesList = () => {
   ];
 
   return (
-    <div className="template-container">
-      <div className="template-wrapper">
-        <div className="template">
-          <div className="left">
-            <div className="widget-list">
-              {widgets.map((widget, index) => (
-                <Wizard
-                  key={widget.id}
-                  id={widget.id}
-                  title={widget.title}
-                  content={widget.content}
-                  data={widget}
-                  isSelected={selectedShadows.includes(widget.id)}
-                  onClick={() => handleWidgetClick(widget.id)}
-                />
-              ))}
+    
+      <div className="template-container">
+        <div className="template-wrapper">
+          <div className="template">
+            <div className="left">
+              <div className="widget-list">
+                {widgets.map((widget, index) => (
+                  <Wizard
+                    key={widget.id}
+                    id={widget.id}
+                    title={widget.title}
+                    content={widget.content}
+                    data={widget}
+                    isSelected={selectedShadows.includes(widget.id)}
+                    onClick={() => handleWidgetClick(widget.id)}
+                  />
+                ))}
 
-              <Link
-                to="/industry/vertical/modules/process"
-                style={{ textDecoration: "none" }}
-              >
-                <div class="arrow">
-                  <span></span>
-                  <span></span>
-                </div>
-              </Link>
-              <Link to="/industry/vertical" style={{ textDecoration: "none" }}>
-                <div class="arrowleft">
-                  <span></span>
-                  <span></span>
-                </div>
-              </Link>
+                <Link
+                  to="/industry/vertical/modules/process"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div class="arrow">
+                    <span></span>
+                    <span></span>
+                  </div>
+                </Link>
+                <Link
+                  to="/industry/vertical"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div class="arrowleft">
+                    <span></span>
+                    <span></span>
+                  </div>
+                </Link>
+              </div>
             </div>
-          </div>
 
-          <div className="right"></div>
+            <div className="right"></div>
+          </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

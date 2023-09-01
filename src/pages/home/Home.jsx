@@ -8,7 +8,7 @@ import Widgets from "../../components/widgets/Widgets";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Moduledescription from "../../components/moduledescription/Moduledescription";
 import Processselection from "../../components/processselection/Processselection";
-const Home = () => {
+const Home = (props) => {
   return (
     <div className="home">
       <Sidebar />
@@ -18,6 +18,7 @@ const Home = () => {
         <Processselection />
         <div className="widgets"></div>
       </div>
+      <p>Data from Parent: {props.data}</p>
     </div>
   );
 };
