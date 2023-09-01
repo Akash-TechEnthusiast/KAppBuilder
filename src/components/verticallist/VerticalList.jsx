@@ -25,7 +25,7 @@ const VerticalList = (props) => {
     //onClick(); // Call the parent's onClick handler if needed
   };
 
-  const [selectedWidgetId, setSelectedWidgetId] = useState(null);
+  const [selectedVerticalId, setSelectedVerticalId] = useState(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,7 +33,7 @@ const VerticalList = (props) => {
 
   const handleWidgetClick = (widgetId) => {
     console.log(widgetId);
-    setSelectedWidgetId(widgetId);
+    setSelectedVerticalId(widgetId);
     setIsModalOpen(true);
   };
 
@@ -106,7 +106,7 @@ const VerticalList = (props) => {
                     title={widget.title}
                     content={widget.content}
                     data={widget}
-                    isSelected={widget.id === selectedWidgetId}
+                    isSelected={widget.id === selectedVerticalId}
                     onClick={() => handleWidgetClick(widget.id)}
                   />
                 ))}
@@ -157,7 +157,11 @@ const VerticalList = (props) => {
           </div>
         </div>
       ) : (
-        <Home data={childData} />
+        <Home
+          moduleId={props.moduleId}
+          verticalId={selectedVerticalId}
+          data={childData}
+        />
       )}
     </div>
   );

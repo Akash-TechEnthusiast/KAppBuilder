@@ -12,7 +12,12 @@ import { useEffect } from "react";
 const Home = (props) => {
   useEffect(() => {
     // This effect will run when the component is first mounted.
-    console.log("ChildComponent has mounted.", props.data);
+    console.log(
+      "ChildComponent has mounted.",
+      props.data,
+      props.moduleId,
+      props.verticalId
+    );
 
     // You can perform any initial actions here.
   }, []);
