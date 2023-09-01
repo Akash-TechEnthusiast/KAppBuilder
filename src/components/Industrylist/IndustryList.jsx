@@ -68,7 +68,7 @@ const IndustryList = () => {
           </Link>
         </div>
       ) : (
-        <VerticalList />
+        <VerticalList data={selectedWidgetId} />
       )}
     </div>
   );

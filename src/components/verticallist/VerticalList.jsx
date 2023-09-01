@@ -19,7 +19,7 @@ import Home from "../../pages/home/Home";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 
-const VerticalList = () => {
+const VerticalList = (props) => {
   const handleClick = () => {
     window.alert(`You clicked on Widget`);
     //onClick(); // Call the parent's onClick handler if needed
